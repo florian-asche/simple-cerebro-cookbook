@@ -13,17 +13,20 @@ application.secret="<%= node['cerebro']['config']['application.secret'] %>"
 application.langs="<%= node['cerebro']['config']['application.langs'] %>"
 
 hosts = [
-  #{
-  #  host = "http://some-authenticated-host:9200",
-  #  auth = {
-  #    username = "username"
-  #    password = "secret-password"
-  #  }
-  #},
   {
     host = "<%= node['cerebro']['config']['host'] %>"
+    <% if node['cerebro']['config']['esuser'] || node['cerebro']['config']['espass'] %>
+    auth = {
+      username = "<%= node['cerebro']['config']['esuser'] %>"
+      password = "<%= node['cerebro']['config']['espass'] %>"
+    }
+    <% end %>
   }
 ]
+
+<% if node['cerebro']['config']['ignore_ssl_certs'] %>
+play.ws.ssl.loose.acceptAnyCertificate=true
+<% end %>
 
 # Logger
 # ~~~~~

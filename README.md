@@ -41,13 +41,18 @@ include_recipe 'mywrapper-cerebro::service_upstart' # I want to use upstart
 * `['cerebro']['config']['logger.root']` - Defaults to `ERROR`
 * `['cerebro']['config']['logger.play']` - Defaults to `INFO`
 * `['cerebro']['config']['logger.application']` - Defaults to `DEBUG`
+* `['cerebro']['config']['ignore_ssl_certs']` - Defaults to `false`. Set it `true` only for dev nodes.
+* `['cerebro']['config']['esuser']` - Elasticsearch username
+* `['cerebro']['config']['espass']` - Elasticsearch password
 * `['cerebro']['download_url']` - Defaults to `https://github.com/lmenezes/cerebro/releases/download/v0.3.1/cerebro-0.3.1.tgz`
 * `['cerebro']['checksum']` - Defaults to `23e2573abc41087237a69f775ebfb220af4b77745a37f6eea507cee69fd90896`
-* `['cerebro']['version']` - Defaults to `0.3.1`
+* `['cerebro']['version']` - Defaults to `0.6.5`
 * `['cerebro']['user']` - Defaults to `Cerebro`
 * `['cerebro']['group']` - Defaults to `Cerebro`
 * `['cerebro']['dir']` - Defaults to `/opt`
 * `['cerebro']['path']['logs']` - Defaults to `/var/log/cerebro`
+
+
 
 
 # License and Authors
