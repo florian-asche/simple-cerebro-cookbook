@@ -8,7 +8,7 @@ user 'cerebro user' do
   comment 'Cerebro User'
   home "#{node['cerebro']['dir']}/cerebro"
   shell '/bin/bash'
-  supports manage_home: false
+  #supports manage_home: false
   action :create
   system true
 end
